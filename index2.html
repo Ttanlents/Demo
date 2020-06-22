@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue体验</title>
+		<script src="js/vue.js"></script>
+		<style>
+			#box h1{
+				text-align: center;
+				color: red;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div><h1>{{msg}}</h1></div>
+			<div style="border: 1px solid red; width: 100px;margin-left: 10px;">{{number}}</div>
+			<button v-on:click="del">点我试试-</button>
+			<button v-on:click="add">点我试试+</button>
+		</div>
+		<script>
+			var vm=new Vue({
+			el:'#box',
+			data:{
+				msg:"Vue框架初体验",
+				number:1
+			},
+			methods:{
+				add:function(){
+					this.number++;
+				},
+				del:function(){
+					this.number--;
+				}
+				
+			}
+			
+		})
+			
+		</script>
+	</body>
+</html>

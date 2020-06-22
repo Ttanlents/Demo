@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<script src="js/vue.js"></script>
+	<style>
+		#box{
+			margin: 10px auto;
+			text-align: center;
+		}
+		#box.show{
+			margin-left:47%;
+			border: 1px solid black;
+			width: 100px;
+			background-color: gainsboro;                 
+		}
+		
+	</style>
+	</head>
+	<body>
+		<div id="box">
+			<div v-if="isishow">我是{{isshow}}</div>
+			<div v-else="isishow">我是{{isshow}}</div>
+			<div class="show" v-show="isshow"><font style="font-family: simsun;color: red;">点了，我藏起来</font></div>
+			<button @click="display">点我呀！亲亲</button>
+			
+			
+		</div>
+		<script >
+			var vm=new Vue({
+				el:'#box',
+				data:{
+					isshow:false
+				},
+				methods:{
+					display(){
+						this.isshow=!this.isshow;
+					}
+				}
+				
+			})
+			
+			
+			
+		</script>
+	</body>
+</html>

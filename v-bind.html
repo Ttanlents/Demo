@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style>
+			.temp{
+				background: gray;
+				width: 200px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div v-bind:class="{temp:flag}">我是正方形</div>
+			<button v-on:click="display">点我试试</button>
+			<img :src="imgsrc" />
+			
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#box',
+				data:{
+					flag:false,
+					imgsrc:'img/1.PNG'
+				},
+				methods:{
+					display(){
+						this.flag=!this.flag;
+						console.log("123")
+					}
+				}
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li v-for="(item,index) in arr">
+					<span>{{item.name}}</span>
+					<span>{{item.age}}</span>
+					<span v-for="(citem,cindex) in item.hobby">
+						{{citem}}
+					</span>
+					
+				</li>
+			</ul>
+			
+			
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#box',
+				data:{
+					arr:[
+					{name:'zhangsan',age:18,hobby:["篮球","跑步"]},
+					{name:'lisi',age:18,hobby:["篮球","跑步"]},
+					{name:'wangwu',age:18,hobby:["篮球","跑步"]}
+					]
+				}
+				
+				
+			})
+			
+			
+		</script>
+	</body>
+</html>

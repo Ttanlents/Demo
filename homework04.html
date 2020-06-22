@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>相册</title>
+		<script src="js/vue.js"></script>
+		<style type="text/css">
+			li{
+				float: left;
+				list-style: none;
+				margin-left: 30px;
+				margin-top: 5px;
+				text-align: center;
+			    border: 1px solid gray; 
+				border-radius: 5px;
+				
+			}
+			
+			ul{
+				/* border: 1px solid green; */
+				overflow: hidden;
+				width: 800px;
+				margin: 0 auto;
+			}
+			img{
+				width: 150px;
+				height: 220px;
+				padding: 5px;
+				
+			}
+			li:hover{
+				box-shadow: 0 0 5px green;
+			}
+			
+		</style>
+		<!--<script>
+		var arr1=["邓博驹","冯明杰","何燕民","余俊锋","余林帆","刘镇山","李国洲","刘建超","廖庆波","黄华坚","梁志鹏","雷宏延","李基志"];
+			function getnum(){
+				var num=Math.floor(Math.random()*13);
+				alert('点到的同学是：'+arr[num])
+				console.log('随机数是：'+num)
+				console.log('点到的同学是：'+arr[num])
+			}
+			
+		</script>-->
+		
+	</head>
+	<body>
+		<div id="box">
+		<div align="center" >
+		<h1 > 相册列表</h1>   
+		<button style="margin-left: 60%;width: 50px;" v-on:click="getnum">点名</button>
+		</div>
+		
+		<ul>
+			
+			<li v-for="(item,index) in arr"> 
+				
+				<img v-bind:src="item.imagsrc"   alt=" " /><br/>{{item.name}}
+						
+			
+			</li>
+			
+			
+			
+			
+			
+		</ul>
+		</div>
+		<script type="text/javascript">
+				var vm=new Vue({
+				el:'#box',
+				data:{
+					num:0,
+					arr:[
+				{imagsrc:'images/img11.JPG',name:'邓博驹'},
+				{imagsrc:'images/img9.JPG',name:'何燕民'},
+				{imagsrc:'images/img7.jpg',name:'余俊锋'},
+				{imagsrc:'images/img6.jpg',name:'冯明杰'},
+				{imagsrc:'images/img12.JPG',name:'刘镇山'},
+				{imagsrc:'images/img1.JPG',name:'李国洲'},
+				{imagsrc:'images/img2.JPG',name:'刘建超'},
+				{imagsrc:'images/img8.jpg',name:'廖庆波'},
+				{imagsrc:'images/img13.jpg',name:'黄华坚'},
+				{imagsrc:'images/img5.JPG',name:'梁志鹏'},
+				{imagsrc:'images/img4.jpg',name:'雷宏延'},
+				{imagsrc:'images/img2.JPG',name:'余林帆'},
+				{imagsrc:'images/img10.jpg',name:'李基志'}
+					]
+				},
+				methods:{
+					getnum(){
+						this.num = Math.floor(Math.random()*13)
+						console.log(this.num)
+						alert('点到的同学是'+this.arr[this.num].name) 
+						
+					}
+					
+				}
+				
+				
+			})
+				
+		</script>
+		
+	</body>
+</html>

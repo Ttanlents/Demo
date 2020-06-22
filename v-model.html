@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style type="text/css">
+			#box{
+				
+				width: 300px;
+				margin-top: 20%;
+				margin-left: 40%;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+				 <label for="name">姓名:</label>
+				 <input type="text" id="name" v-model="msg"/>
+				 <div>{{msg}}</div>
+			
+			
+			
+		</div>
+		<script>
+			var vm=new Vue({
+				el:'#box',
+				data:{
+					msg:'zhangsan'
+				}
+				
+			})
+			
+		</script>
+	</body>
+</html>
